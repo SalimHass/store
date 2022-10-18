@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Query } from '@apollo/client/react/components';
 
-
+import Product from "./Product.js"
 import { LOAD_DATA } from '../GraphQL/Queries'
 
 class GetData extends Component {
@@ -14,9 +14,26 @@ class GetData extends Component {
     return (
       <Query query={LOAD_DATA} >
         
-        {({data}) =>
+        {({loading,data}) =>{
+          if (loading) return "Loading...."
+          return (
+            <div>
+              {console.log(data)}
+            {
+              data.category.products.map(product => (
+                <>
+                <Product key={product.name} product={product}/>
+                
+              </>
+                ))
+              }
+              </div>
+
+          )
+
+        }
+      }
         
-        <div> Render data here ...</div>}
       </Query>
     )
   }
