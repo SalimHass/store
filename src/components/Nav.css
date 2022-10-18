@@ -1,0 +1,57 @@
+nav{
+    display: flex;
+    width: auto;
+    padding-left: 7.5%;
+    padding-right:7.5% ;
+    height: 80px;
+    align-items: center;
+    
+}
+
+.img--logo{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cat--select{
+    position: relative;
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+  
+}
+.cat--select:visited {
+    color: inherit;
+}
+
+.cat--select:active{
+    color: #5ECE7B;
+    font-weight: 600;
+    
+}
+
+
+
+.cat--select:active::after{
+    content: "";
+    width: 130%;
+    height:2px;
+    background-color:#5ECE7B ;
+    position: absolute;
+    
+    left:-15%;
+    top: 3rem;
+    
+   
+    
+}
+
+
+.cat-b{
+    margin: 0rem 2rem;
+}
+.cat--select--a{
+    margin-left: 7.5%;
+}
+
