@@ -31,3 +31,34 @@ export const LOAD_DATA = gql`
     }
   }
 `
+export const GET_CATEGORY_Currency_LIST = gql`
+query {
+  categories {
+    name
+  }
+  currencies {
+    label
+    symbol
+  }
+}`;
+
+export const GET_PRODUCTS_CATEGORY = gql`
+query products($category: String!) {
+  category(input: { title: $category }) {
+    name
+    products {
+      id
+      name
+      inStock
+      gallery
+      description
+      brand
+      prices {
+        amount
+        currency {
+          label
+        }
+      }
+    }
+  }
+}`;

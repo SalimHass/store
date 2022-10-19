@@ -1,10 +1,12 @@
 nav{
     display: flex;
     width: auto;
-    padding-left: 7.5%;
+    padding-left: 4%;
     padding-right:7.5% ;
     height: 80px;
     align-items: center;
+    text-transform: uppercase;
+    font-family: 'Raleway';
     
 }
 
@@ -14,11 +16,13 @@ nav{
 }
 
 .cat--select{
+    margin: 2%;
     position: relative;
     font-weight: 400;
     font-size: 16px;
     text-decoration: none;
     color: black;
+   
   
 }
 .cat--select:visited {
@@ -42,16 +46,12 @@ nav{
     
     left:-15%;
     top: 3rem;
-    
-   
-    
+       
 }
 
+.img--logo{
+    height: 32px;
+    justify-self: center;
 
-.cat-b{
-    margin: 0rem 2rem;
-}
-.cat--select--a{
-    margin-left: 7.5%;
 }
 

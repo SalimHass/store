@@ -1,0 +1,34 @@
+.container {
+  width: 380px;
+  height: 444;
+  
+  padding: 16px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.prod--img {
+  width: 356px;
+  height: 338px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+.prod--name {
+    font-family: 'Raleway';
+  font-size: 18px;
+  line-height: 160%;
+  align-self: start;
+}
+.prod--price {
+  align-self: start;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 160%;
+}
+.container:hover{
+    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+}
