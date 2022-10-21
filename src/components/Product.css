@@ -1,0 +1,91 @@
+.product--container{
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+   
+}
+
+.gallery-pics{
+    max-height: 88px;
+
+}
+
+.product--details{
+
+}
+.product--brand{
+    font-family: 'Raleway';
+    
+    font-weight: 600;
+    font-size: 30px;
+    
+}
+.product--name{
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 30px;
+    
+}
+
+.attr--name{
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;  
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.attr--not--color{
+    display: flex
+}
+
+.attr--text{
+    display: flex;
+    border: 1px solid #1D1F22;
+    height: 45px;
+    width: 63px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+
+}
+
+.product--price--number{
+    font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 18px;
+margin-bottom:20px ;
+
+    
+}
+
+.product--price{
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 18px;
+margin-bottom: 10px;
+margin-top: 36px;
+
+}
+
+.addToCart--btn{
+    background-color:#5ECE7B ;
+    width: 292px;
+    height: 52px;
+    border: #5ECE7B;
+    color: white;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.product--discreption{
+    margin-top:  40px; ;
+}

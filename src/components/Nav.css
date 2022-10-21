@@ -1,57 +1,66 @@
-nav{
-    display: flex;
-    width: auto;
-    padding-left: 4%;
-    padding-right:7.5% ;
-    height: 80px;
-    align-items: center;
-    text-transform: uppercase;
-    font-family: 'Raleway';
-    
-}
-
-.img--logo{
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cat--select{
-    margin: 2%;
-    position: relative;
-    font-weight: 400;
-    font-size: 16px;
-    text-decoration: none;
-    color: black;
-   
+nav {
+  display: flex;
+  width: auto;
+  padding-left: 4%;
+  padding-right: 7.5%;
+  height: 80px;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: "Raleway";
+  
   
 }
-.cat--select:visited {
-    color: inherit;
-}
 
-.cat--select:active{
-    color: #5ECE7B;
-    font-weight: 600;
-    
-}
-
-
-
-.cat--select:active::after{
-    content: "";
-    width: 130%;
-    height:2px;
-    background-color:#5ECE7B ;
-    position: absolute;
-    
-    left:-15%;
-    top: 3rem;
-       
-}
-
-.img--logo{
-    height: 32px;
+.img--logo {
+    position :relative;
     justify-self: center;
+}
 
+.cat--select {
+  margin: 2%;
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+  color: black;
+}
+.cat--select:visited {
+  color: inherit;
+}
+
+.cat--selected {
+  color: #5ece7b;
+  font-weight: 600;
+  position: relative;
+  margin: 2%;
+  
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
+  
+}
+
+.cat--selected::after {
+  content: "";
+  width: 130%;
+  height: 2px;
+  background-color: #5ece7b;
+  position: absolute;
+  left: -15%;
+  top: 3rem;
+}
+
+.img--logo {
+  height: 32px;
+  position:absolute;
+  left: 50%;
+  
+}
+
+.cur--select{
+    padding-right: 22px;
+    margin-left: auto;
+
+   
 }
 

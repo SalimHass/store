@@ -62,3 +62,38 @@ query products($category: String!) {
     }
   }
 }`;
+
+
+export const GET_TEST_PRODUCT=gql`
+query {
+  product(id:  "jacket-canada-goosee" ){
+    name
+    inStock
+    gallery
+    description
+   brand
+    attributes{
+      name
+      type
+      items{
+        displayValue
+        value
+        id
+      }
+      
+      
+    }
+    prices{
+      currency{
+        label
+        symbol
+        
+      }
+      amount
+      
+    }
+    
+  }
+  
+  
+}`

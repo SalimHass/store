@@ -10,12 +10,9 @@ import { onError } from "@apollo/client/link/error";
 import { Query } from "@apollo/client/react/components";
 import { Component } from "react";
 import Nav from "./components/Nav";
-import Products from "./components/Products";
-import {
-  GET_CATEGORY_Currency_LIST,
-  GET_PRODUCTS_CATEGORY,
-} from "./GraphQL/Queries";
-
+import Category from "./components/Category";
+import Product from "./components/Product";
+import { GET_CATEGORY_Currency_LIST } from "./GraphQL/Queries";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -33,6 +30,19 @@ const client = new ApolloClient({
 });
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { selectedCategoryIndex: 0 };
+    this.handler = this.handler.bind(this);
+  }
+
+  handler(index) {
+    this.setState({
+      selectedCategoryIndex: index,
+    });
+  }
+
   render() {
     return (
       <ApolloProvider client={client}>
@@ -40,38 +50,21 @@ class App extends Component {
           {({ loading, error, data }) => {
             if (loading) return "loading ...";
             if (error) return { errorLink };
-            let category = data.categories[0].name;
+            let category =
+              data.categories[this.state.selectedCategoryIndex].name;
             return (
-              <>
-              
-                <Nav key={data.categories.id} cats={data.categories}/>
-                <Query query={GET_PRODUCTS_CATEGORY} variables={{ category }}>
-                  {({ loading, error, data }) => {
-                    if (loading) return "Loading...";
-                    if (error)
-                      return `Error! ${JSON.stringify(error, null, 2)}`;
-                    return (
-                      
-                      //Add product List component  here
-                      <>
-                        <div className="products--container">
-                        
-                        {data.category.products.map((product) => (
-                          
-                          <Products key={product.id} product={product}/>
-                          ))}
-                          </div>
-                      </>
-                    );
-                  }}
-                </Query>
-              </>
+              <div className="hero">
+                <Nav
+                  key={"nav"}
+                  cats={data}
+                  onCategoryChanged={this.handler}
+                  selectedCategoryIndex={this.state.selectedCategoryIndex}
+                />
+                <Category selectedCategory={category} />
+                <Product/>
+              </div>
             );
           }}
-
-          
-
-          
         </Query>
       </ApolloProvider>
     );
