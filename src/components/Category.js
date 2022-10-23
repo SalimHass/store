@@ -3,6 +3,7 @@ import { GET_PRODUCTS_CATEGORY } from "../GraphQL/Queries";
 import { Query } from "@apollo/client/react/components";
 import Products from "../components/Products";
 import "./Category.css"
+import {withRouter} from "../router/withRouter";
 export class Category extends Component {
   render() {
     const category = this.props.selectedCategory;
@@ -27,4 +28,4 @@ export class Category extends Component {
   }
 }
 
-export default Category;
+export default withRouter(Category);

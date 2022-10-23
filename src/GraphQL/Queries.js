@@ -66,7 +66,7 @@ query products($category: String!) {
 
 export const GET_TEST_PRODUCT=gql`
 query {
-  product(id:  "jacket-canada-goosee" ){
+  product(id:  "ps-5" ){
     name
     inStock
     gallery

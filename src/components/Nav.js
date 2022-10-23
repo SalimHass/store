@@ -3,6 +3,7 @@ import "./Nav.css";
 import CurrencySwitcher from "./CurrencySwitcher";
 import Basket from "./Basket";
 import logo from "../img/logo.png";
+import {Link} from "react-router-dom";
 export class Nav extends Component {
   render() {
     const selectedCategoryIndex = this.props.selectedCategoryIndex;
@@ -11,19 +12,19 @@ export class Nav extends Component {
         <nav >
           {this.props.cats.categories.map((cat, index) => 
             selectedCategoryIndex === index ? (
-              <p
-                className="cat--selected"
-                onClick={() => this.props.onCategoryChanged(index)}
-              >
-                {cat.name}
-              </p>
-            ) : (
-              <p
-                className="cat--select"
-                onClick={() => this.props.onCategoryChanged(index)}
-              >
-                {cat.name}
-              </p>
+              <Link key={cat.name} to="/"
+              className="cat--selected"
+              onClick={() => this.props.onCategoryChanged(index)}
+            >
+              {cat.name}
+            </Link>
+          ) : (
+            <Link key={cat.name} to="/"
+              className="cat--select"
+              onClick={() => this.props.onCategoryChanged(index)}
+            >
+              {cat.name}
+            </Link>
             )
           )}
 

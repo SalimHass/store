@@ -23,6 +23,7 @@
     font-family: 'Raleway';
     font-weight: 400;
     font-size: 30px;
+    margin-bottom :43px;
     
 }
 
@@ -37,7 +38,9 @@
 }
 
 .attr--not--color{
-    display: flex
+    display: flex;
+    margin-bottom: 8px;
+    
 }
 
 .attr--text{
@@ -48,6 +51,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 12px;
+    
 
 }
 
@@ -65,17 +69,17 @@ margin-bottom:20px ;
 .product--price{
     text-transform: uppercase;
     font-family: 'Roboto Condensed';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 18px;
-margin-bottom: 10px;
-margin-top: 36px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 10px;
+    margin-top: 36px;
 
 }
 
 .addToCart--btn{
-    background-color:#5ECE7B ;
+    background:#5ECE7B ;
     width: 292px;
     height: 52px;
     border: #5ECE7B;
@@ -87,5 +91,27 @@ margin-top: 36px;
 }
 
 .product--discreption{
-    margin-top:  40px; ;
+    margin-top:  40px; 
+    display: flex;
+    flex-wrap: wrap;
+    width: 292px;
 }
+
+.main--pic{
+   max-height: 550px;
+}
+.attr--color{
+    display: flex;
+    margin-bottom: 8px;
+    
+    
+}
+.attr--color--box{
+    min-width: 32px;
+    min-height: 32px;
+    margin-right: 10px;
+    margin-bottom: 24px;
+    
+
+}
+

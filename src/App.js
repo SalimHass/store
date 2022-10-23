@@ -8,11 +8,14 @@ import {
 } from "@apollo/client";
 import { onError } from "@apollo/client/link/error";
 import { Query } from "@apollo/client/react/components";
+
 import { Component } from "react";
 import Nav from "./components/Nav";
 import Category from "./components/Category";
 import Product from "./components/Product";
 import { GET_CATEGORY_Currency_LIST } from "./GraphQL/Queries";
+import { withRouter } from "./router/withRouter";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -46,26 +49,33 @@ class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
-        <Query query={GET_CATEGORY_Currency_LIST}>
-          {({ loading, error, data }) => {
-            if (loading) return "loading ...";
-            if (error) return { errorLink };
-            let category =
-              data.categories[this.state.selectedCategoryIndex].name;
-            return (
-              <div className="hero">
-                <Nav
-                  key={"nav"}
-                  cats={data}
-                  onCategoryChanged={this.handler}
-                  selectedCategoryIndex={this.state.selectedCategoryIndex}
-                />
-                <Category selectedCategory={category} />
-                <Product/>
-              </div>
-            );
-          }}
-        </Query>
+        <BrowserRouter>
+          <Query query={GET_CATEGORY_Currency_LIST}>
+            {({ loading, error, data }) => {
+              if (loading) return "loading ...";
+              if (error) return { errorLink };
+              let category =
+                data.categories[this.state.selectedCategoryIndex].name;
+              return (
+                <div className="hero">
+                  <Nav
+                    key={"nav"}
+                    cats={data}
+                    onCategoryChanged={this.handler}
+                    selectedCategoryIndex={this.state.selectedCategoryIndex}
+                  />
+                  <Routes>
+                    <Route
+                      path="/"
+                      element={<Category selectedCategory={category} />}
+                    />
+                    <Route path="/product/:productId" element={<Product />} />
+                  </Routes>
+                </div>
+              );
+            }}
+          </Query>
+        </BrowserRouter>
       </ApolloProvider>
     );
   }
