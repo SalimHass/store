@@ -14,8 +14,8 @@ import Nav from "./components/Nav";
 import Category from "./components/Category";
 import Product from "./components/Product";
 import { GET_CATEGORY_Currency_LIST } from "./GraphQL/Queries";
-import { withRouter } from "./router/withRouter";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cart from "./components/Cart";
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
@@ -70,6 +70,7 @@ class App extends Component {
                       element={<Category selectedCategory={category} />}
                     />
                     <Route path="/product/:productId" element={<Product />} />
+                    <Route path="/cart" element={<Cart />} />
                   </Routes>
                 </div>
               );

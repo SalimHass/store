@@ -4,11 +4,12 @@ import {Link} from "react-router-dom";
 
 
 export class Products extends Component {
+  
   render() {
     return (
         
       <Link className='links' to={`/product/${this.props.product.id}`}>
-      <div className='container'>
+      <div className='container' >
 
 <img className='prod--img' src={this.props.product.gallery[0]} alt="product img"></img>
 <div className='prod--name'>{this.props.product.name}</div>

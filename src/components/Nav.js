@@ -10,6 +10,7 @@ export class Nav extends Component {
     return (
       <div>
         <nav >
+        
           {this.props.cats.categories.map((cat, index) => 
             selectedCategoryIndex === index ? (
               <Link key={cat.name} to="/"

@@ -97,3 +97,31 @@ query {
   
   
 }`
+
+export const GET_PRODUCT = gql`
+query getProduct($productId: String!) {
+  product(id: $productId){
+    name
+    inStock
+    gallery
+    description
+   brand
+    attributes{
+      name
+      type
+      items{
+        displayValue
+        value
+        id
+      }
+    }
+    prices{
+      currency{
+        label
+        symbol
+      }
+      amount
+    }
+  }
+   
+}`

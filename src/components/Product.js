@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Product.css";
-import { GET_TEST_PRODUCT } from "../GraphQL/Queries";
+import { GET_PRODUCT } from "../GraphQL/Queries";
 import { Query } from "@apollo/client/react/components";
 import parse from "html-react-parser";
 import {withRouter} from "../router/withRouter";
@@ -10,10 +10,13 @@ import {withRouter} from "../router/withRouter";
 export class Product extends Component {
    
   render() {
+    const { productId } = this.props.router.params;
+    console.log(this.props.router.params)
+    console.log("salim")
 
     
     return (
-      <Query query={GET_TEST_PRODUCT}>
+      <Query query={GET_PRODUCT} variables={{productId}}>
         {({ loading, error, data }) => {
           if (loading) return "Loading...";
           if (error) return `Error! ${JSON.stringify(error, null, 2)}`;
