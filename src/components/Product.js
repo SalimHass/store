@@ -5,21 +5,60 @@ import { Query } from "@apollo/client/react/components";
 import parse from "html-react-parser";
 import { withRouter } from "../router/withRouter";
 import { addItem } from "./cart/cartSlice";
-import {useSelector, useDispatch, connect} from 'react-redux'
-
-
+import { useSelector, useDispatch, connect } from "react-redux";
+import Cart from "./Cart";
 export class Product extends Component {
+  productAttrAdded = { details: {} };
+
+
+  attrAdded(name, value) {
+    this.productAttrAdded.details.name
+      ? (this.productAttrAdded.details.name = value)
+      : (this.productAttrAdded.details[name] = value);
+
+    
+  }
+
+  addToCart(data) {
+    var fullProduct = {
+    
+    };
+    
+    fullProduct["name"] = data.product.name;
+    fullProduct["id"] = data.product.id;
+    fullProduct["brand"] = data.product.brand;
+    fullProduct["gallery"] = data.product.gallery;
+    fullProduct["price"] = data.product.prices;
+    fullProduct["attrDetails"] = this.productAttrAdded;
+    fullProduct["attributes"] = data.product.attributes;
+    this.props.addItem(fullProduct);
+    this.productAttrAdded = { details: {} };
+
+    
+  }
+
   render() {
     const { productId } = this.props.router.params;
     
- 
+    
 
     return (
       <Query query={GET_PRODUCT} variables={{ productId }}>
         {({ loading, error, data }) => {
           if (loading) return "Loading...";
           if (error) return `Error! ${JSON.stringify(error, null, 2)}`;
+          
+          const currentCurrency = this.props.selectedCurrency
+          let price = data.product.prices[0]
+          for(const p of data.product.prices)
+          {
+            if(p.currency.label===currentCurrency.label){
+              price = p.amount
+              break;
+            }
+          }
           return (
+
             <>
               <div className="product--container">
                 <div className="">
@@ -45,7 +84,10 @@ export class Product extends Component {
                           {att.type === "swatch" ? (
                             <div className="attr--color">
                               {att.items.map((item) => (
-                                <div onClick={()=> attrAdded(att.name,item.value)}
+                                <div
+                                  onClick={() =>
+                                    this.attrAdded(att.name, item.value)
+                                  }
                                   className="attr--color--box"
                                   style={{ background: `${item.value}` }}
                                 ></div>
@@ -54,7 +96,14 @@ export class Product extends Component {
                           ) : (
                             <div className="attr--not--color">
                               {att.items.map((item) => (
-                                <div onClick={()=> attrAdded(att.name,item.value)} className="attr--text">{item.value}</div>
+                                <div
+                                  onClick={() =>
+                                    this.attrAdded(att.name, item.value)
+                                  }
+                                  className="attr--text"
+                                >
+                                  {item.value}
+                                </div>
                               ))}
                             </div>
                           )}
@@ -64,41 +113,42 @@ export class Product extends Component {
 
                     <div className="product--price">price:</div>
                     <div className="product--price--number">
-                      {`${data.product.prices[0].currency.symbol} ${data.product.prices[0].amount}`}
+                      {`${this.props.selectedCurrency.symbol} ${price}`}
                     </div>
+
                     
-                    {console.log(data.product)}
-                    <button className="addToCart--btn" onClick={() => (this.props.addItem())}>ADD TO CART</button>
+                    <button
+                      className="addToCart--btn"
+                      onClick={() => this.addToCart(data)}
+                    >
+                      ADD TO CART
+                    </button>
                     <div className="product--discreption">
                       {parse(`${data.product.description}`)}
                     </div>
                   </div>
                 </div>
               </div>
-              
             </>
           );
         }}
       </Query>
     );
-    
-  
+  }
 }
 
-}
-const productAttrAdded = {details:[]};
-function attrAdded(name,value){
-  productAttrAdded.details= [...productAttrAdded.details,name,value]
-  
-  console.log(productAttrAdded)
-}
 function mapStateToProps(state) {
-  const amount = state.cart.values.amount;
-  const product=state.cart.values.product;
+  const product = state.cart.product;
+  const selectedCurrency = state.currency.currency;
   return {
-      amount,product
+    product,selectedCurrency
   };
 }
-const mapDispatchToProps = {addItem};
+const mapDispatchToProps = { addItem };
 
-export default connect(mapStateToProps, mapDispatchToProps) (withRouter(Product));
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(Product));

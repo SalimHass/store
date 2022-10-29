@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import "./CurrencySwitcher.css";
 import vector from "../img/vector.svg"
+import {changeCurrency} from '../features/currencySwitcher/CurrencySwitcherSlicer'
+import { connect} from 'react-redux'
 
 export class CurrencySwitcher extends Component {
+  
   render() {
     return (
       <div className="dropdown">
         
-        <button className="dropbtn">{this.props.currency[0].symbol} <img className="img--vector" src={vector}/></button>
+        <button className="dropbtn">{this.props.selectedCurrency.symbol} <img className="img--vector" src={vector}/></button>
         
         <div className="dropdown-content">
           {this.props.currency.map((cur) => (
 
-            <a href="#">{`${cur.symbol} ${cur.label}`}</a>
+            <div key={cur.symbol} className="cur--option" onClick={()=>this.props.changeCurrency(cur)} >{`${cur.symbol} ${cur.label}`}</div>
             ))}
         </div>
           
@@ -21,4 +24,15 @@ export class CurrencySwitcher extends Component {
   }
 }
 
-export default CurrencySwitcher;
+function mapStateToProps(state) {
+  const selectedCurrency = state.currency.currency;
+  return {
+    selectedCurrency
+  };
+}
+
+const mapDispatchToProps = {changeCurrency};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CurrencySwitcher)
+
+;

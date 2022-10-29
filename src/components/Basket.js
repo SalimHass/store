@@ -1,17 +1,33 @@
 import React, { Component } from 'react'
 import "./Basket.css"
 import basket from "../img/basket.svg"
+import { connect } from 'react-redux'
+import {Link} from "react-router-dom";
+
 
 export class Basket extends Component {
   render() {
+    const sum = this.props.products.reduce(
+      (previousValue, currentValue) => previousValue + currentValue.quantity,0
+    )
     return (
-      <div className='basket--nav'>
+      <Link to="/cart" className='basket--nav'>
         <img className='basket--img'  src={basket} alt="Basket"/>
-        <div className='basket--items'>3</div>
+        <div className='basket--items'>{sum}</div>
         
-      </div>
+      </Link>
     )
   }
 }
 
-export default Basket
+
+
+function mapStateToProps(state) {
+    
+  const products = state.cart.products;
+  return {
+      products
+  };
+}
+
+export default connect(mapStateToProps)(Basket);

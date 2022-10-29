@@ -57,6 +57,7 @@ query products($category: String!) {
         amount
         currency {
           label
+          symbol
         }
       }
     }
@@ -101,6 +102,7 @@ query {
 export const GET_PRODUCT = gql`
 query getProduct($productId: String!) {
   product(id: $productId){
+    id
     name
     inStock
     gallery
