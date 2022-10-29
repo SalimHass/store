@@ -12,8 +12,19 @@ export class Cart extends Component {
     const currency = this.props.currency;
     console.log(products);
     console.log(currency);
+    let currIndex=0
+    for(const p of products[0].price)
+    {
+      if(p.currency.label===currency.label){
+        
+        break;
+      }
+      currIndex++
+    }
+
     let sum = 0;
-    products.map((p) => (sum = sum + p.price[0].amount));
+    products.map((p) => (sum = sum + (
+      p.price[currIndex].amount*p.quantity)));
     let quantity=0;
     products.map((p) => (quantity = quantity + p.quantity));
 
@@ -36,7 +47,7 @@ export class Cart extends Component {
                   <div className="pro--price">
                     {currency.symbol}
                     
-                    {pro.price[0].amount}
+                    {pro.price[currIndex].amount*pro.quantity}
                   </div>
                   {pro.attributes.map((att) => (
                     <>
