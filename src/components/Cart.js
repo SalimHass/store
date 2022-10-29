@@ -13,14 +13,19 @@ export class Cart extends Component {
     console.log(products);
     console.log(currency);
     let currIndex=0
-    for(const p of products[0].price)
-    {
-      if(p.currency.label===currency.label){
-        
-        break;
+    if (products.length){
+
+      for(const p of products[0]?.price)
+      {
+        if(p.currency.label===currency.label){
+          
+          break;
+        }
+        currIndex++
       }
-      currIndex++
     }
+   
+    
 
     let sum = 0;
     products.map((p) => (sum = sum + (
@@ -84,13 +89,15 @@ export class Cart extends Component {
                   ))}
                 </div>
                 <div className="qnt--hero">
-                  <div className="qnt--plus">+</div>
+                  <div className="qnt--plus" >+</div>
                   <div className="pro--qnt">{pro.quantity}</div>
                   <div className="qnt--minus">-</div>
                 </div>
                 <div className="pro--img">
+                  
                   <img
                     className="img--selector--img"
+                    
                     src={pro.gallery[0]}
                     alt="pro pictures"
                   />
