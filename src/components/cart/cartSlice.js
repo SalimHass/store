@@ -50,6 +50,6 @@ export const cartSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { addItem } = cartSlice.actions;
+export const { addItem,updateItem,removeItem } = cartSlice.actions;
 
 export default cartSlice.reducer;

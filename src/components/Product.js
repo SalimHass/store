@@ -5,20 +5,29 @@ import { Query } from "@apollo/client/react/components";
 import parse from "html-react-parser";
 import { withRouter } from "../router/withRouter";
 import { addItem } from "./cart/cartSlice";
-import { useSelector, useDispatch, connect } from "react-redux";
-import Cart from "./Cart";
+import {  connect } from "react-redux";
+
 export class Product extends Component {
-  productAttrAdded = { details: {} };
 
 
-  attrAdded(name, value) {
-    this.productAttrAdded.details.name
-      ? (this.productAttrAdded.details.name = value)
-      : (this.productAttrAdded.details[name] = value);
-
+  constructor(props){
+    super(props)
+     
     
+    this.state = {productAttrAdded: {details: {}}}
+    this.attrAdded = this.attrAdded.bind(this)
+  }
+  attrAdded(name, value){
+    
+    (this.setState(prevState=>({productAttrAdded:{ details: { ...prevState.productAttrAdded.details,[name]:value}}})))
+         
   }
 
+  
+
+
+  
+  
   addToCart(data) {
     var fullProduct = {
     
@@ -29,16 +38,19 @@ export class Product extends Component {
     fullProduct["brand"] = data.product.brand;
     fullProduct["gallery"] = data.product.gallery;
     fullProduct["price"] = data.product.prices;
-    fullProduct["attrDetails"] = this.productAttrAdded;
+    fullProduct["attrDetails"] = this.state.productAttrAdded.details;
     fullProduct["attributes"] = data.product.attributes;
     this.props.addItem(fullProduct);
-    this.productAttrAdded = { details: {} };
+    
+    
+    
 
     
   }
 
   render() {
     const { productId } = this.props.router.params;
+    console.log(this.state.productAttrAdded,"inside")
     
     
 
@@ -57,6 +69,7 @@ export class Product extends Component {
               break;
             }
           }
+          
           return (
 
             <>
@@ -83,27 +96,46 @@ export class Product extends Component {
                         <div>
                           {att.type === "swatch" ? (
                             <div className="attr--color">
+
                               {att.items.map((item) => (
-                                <div
+                                this.state.productAttrAdded.details.Color===item.value? (<><div
+                                  onClick={() =>
+                                    this.attrAdded(att.name, item.value)
+                                  }
+                                  className="attr--color--box color--selected"
+                                  style={{ background: `${item.value}` }}
+                                ></div></>):(<><div
                                   onClick={() =>
                                     this.attrAdded(att.name, item.value)
                                   }
                                   className="attr--color--box"
                                   style={{ background: `${item.value}` }}
-                                ></div>
+                                ></div></>)
+                                
                               ))}
                             </div>
                           ) : (
                             <div className="attr--not--color">
                               {att.items.map((item) => (
-                                <div
+                                this.state.productAttrAdded.details[att.name]!==item.value? (<div
                                   onClick={() =>
                                     this.attrAdded(att.name, item.value)
                                   }
                                   className="attr--text"
                                 >
+                                  
                                   {item.value}
-                                </div>
+                                </div>):(<div
+                                  onClick={() =>
+                                    this.attrAdded(att.name, item.value)
+                                  }
+                                  className="attr--text--selected"
+                                >
+                                  
+                                  {item.value}
+                                </div>)
+                               
+                                
                               ))}
                             </div>
                           )}
@@ -138,7 +170,7 @@ export class Product extends Component {
 }
 
 function mapStateToProps(state) {
-  const product = state.cart.product;
+  const product = state.cart.products;
   const selectedCurrency = state.currency.currency;
   return {
     product,selectedCurrency

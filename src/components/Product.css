@@ -41,6 +41,7 @@
     display: flex;
     margin-bottom: 8px;
     
+    
 }
 
 .attr--text{
@@ -52,8 +53,10 @@
     justify-content: center;
     margin-right: 12px;
     
-
 }
+
+
+
 
 .product--price--number{
     font-family: 'Raleway';
@@ -107,11 +110,32 @@ margin-bottom:20px ;
     
 }
 .attr--color--box{
-    min-width: 32px;
-    min-height: 32px;
+    width: 32px;
+    height: 32px;
+    margin-top: 1px;
+    margin-left: 1px;
     margin-right: 10px;
     margin-bottom: 24px;
+    padding:1px
+    
     
 
 }
 
+.color--selected{
+    border: 1px solid #5ECE7B;;
+}
+
+
+.attr--text--selected{
+    display: flex;
+    border: 1px solid #1D1F22;
+    height: 45px;
+    width: 63px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 12px;
+    color: #ffffff;
+    background-color: #1D1F22;
+    
+}
