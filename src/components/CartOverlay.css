@@ -1,0 +1,70 @@
+.overlay--hero{
+    position: absolute;
+width: 325px;
+height: 677px;
+right: 0px;
+top: 60px;
+padding: 32px 16px;
+display: flex;
+flex-direction: column;
+overflow: scroll;
+
+
+
+
+background: #9e8888;
+    z-index: 0;
+}
+.title--bag{
+    font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+}
+
+
+.total--container{
+display: flex;
+
+}
+.summery--total{
+    margin-right: auto;
+}
+
+
+.btn--checkout{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+background: #5ECE7B;
+width: 140px;
+height: 43px;
+border: #5ECE7B;
+color: white;
+}
+
+.btn--viewbag{
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+
+width: 140px;
+height: 43px;
+
+background: #FFFFFF;
+border: 1px solid #1D1F22;
+
+}
+.btns--container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart--link{
+    text-decoration: none;
+    color: inherit;
+}

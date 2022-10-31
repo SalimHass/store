@@ -12,6 +12,7 @@
   }
   
   .dropdown-content {
+    z-index: 2;
     display: none;
     position: absolute;
     background-color: #FFFFFF;

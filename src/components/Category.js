@@ -20,6 +20,7 @@ export class Category extends Component {
                   <Products key={product.id} product={product} />
                 ))}
               </div>
+              
             </>
           );
         }}

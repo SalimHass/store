@@ -24,7 +24,9 @@
     justify-content: center;
     top:-1rem;
     left:.75rem;
-    
+ 
+}
 
-
+.overlay--click{
+    position: relative;
 }

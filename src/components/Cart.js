@@ -10,8 +10,7 @@ export class Cart extends Component {
   render() {
     const products = this.props.products;
     const currency = this.props.currency;
-    console.log(products);
-    console.log(currency);
+    
     let currIndex=0
     if (products.length){
 
@@ -42,9 +41,11 @@ export class Cart extends Component {
           <h1 className="title--cart">CART</h1>
           <div className="title--line--main"></div>
         </div>
+        <div className="cartItems--container">
         {products.map((p) => (
           p.quantity? (<CartItem cartItem={p} />): (<></>)
-        ))}
+          ))}
+          </div>
         
         <div className="summery--container">
         <p className="summery--tax"> Tax 21%:<span className="summery--numbers">{sum * 0.21}</span> </p>

@@ -4,6 +4,7 @@ import CurrencySwitcher from "./CurrencySwitcher";
 import Basket from "./Basket";
 import logo from "../img/logo.png";
 import {Link} from "react-router-dom";
+import CartOverlay from "./CartOverlay"
 export class Nav extends Component {
   render() {
     const selectedCategoryIndex = this.props.selectedCategoryIndex;
@@ -33,7 +34,10 @@ export class Nav extends Component {
           <div className="cur--select">
             <CurrencySwitcher currency={this.props.cats.currencies} />
           </div>
+          <div >
+
           <Basket />
+          </div>
         </nav>
       </div>
     );

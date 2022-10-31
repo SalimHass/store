@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import arrowleft from "../img/arrowleft.png";
 import arrowright from "../img/arrowright.png";
 import { addItem,updateItem,removeItem } from "./cart/cartSlice";
-import "./CartItem.css"
+import "./CartItemOL.css";
 
 
-export class CartItem extends Component {
+export class CartItemOL extends Component {
   constructor(props){
     super(props)
      
@@ -53,53 +53,53 @@ export class CartItem extends Component {
     
     
     return (
-      <div className="cart--prod--hero">
+      <div className="cart--prod--heroOL">
         
-        <div className="cart--container ">
+        <div className="cart--containerOL ">
           
             <div>
-              <div className="pro--details">
-                <div className="init--details">
-                  <div className="pro--brand">{pro.brand}</div>
-                  <div className="pro--name">{pro.name}</div>
-                  <div className="pro--price">
+              <div className="pro--detailsOL">
+                <div className="init--detailsOL">
+                  <div className="pro--brandOL">{pro.brand}</div>
+                  <div className="pro--nameOL">{pro.name}</div>
+                  <div className="pro--priceOL">
                     {currency.symbol}
                     
                     {price*pro.quantity}
                   </div>
                   {pro.attributes.map((att) => (
                     <>
-                      <div className="attr--name"> {att.name}: </div>
+                      <div className="attr--nameOL"> {att.name}: </div>
                       <div>
                         {att.type === "swatch" ? (
-                          <div className="attr--color">
+                          <div className="attr--colorOL">
                             {att.items.map((item) => (
                                 this.props.cartItem.attrDetails.Color===item.value? (<><div
                                   
                                  
-                                  className="attr--color--box color--selected"
+                                  className="attr--color--boxOL color--selectedOL"
                                   style={{ background: `${item.value}` }}
                                 ></div></>):(<><div
                                   onClick={() => this.props.updateItem(this.props.cartItem)}
 
-                                  className="attr--color--box"
+                                  className="attr--color--boxOL"
                                   style={{ background: `${item.value}` }}
                                 ></div></>)
                                 
                               ))}
                           </div>
                         ) : (
-                          <div className="attr--not--color">
+                          <div className="attr--not--colorOL">
                             {att.items.map((item) => (
                                 this.props.cartItem.attrDetails[att.name]!==item.value? (<div
                                   onClick={() => this.props.updateItem(this.props.cartItem)}
-                                  className="attr--text"
+                                  className="attr--textOL"
                                 >
                                   
                                   {item.value}
                                 </div>):(<div
                                 
-                                  className="attr--text--selected"
+                                  className="attr--text--selectedOL"
                                 >
                                   
                                   {item.value}
@@ -113,31 +113,24 @@ export class CartItem extends Component {
                     </>
                   ))}
                 </div>
-                <div className="qnt--hero">
-                  <div className="qnt--plus" onClick={() => this.props.addItem(pro)} >+</div>
-                  <div className="pro--qnt">{pro.quantity}</div>
-                  <div className="qnt--minus" onClick={() => this.props.removeItem(pro)}>-</div>
+                <div className="qnt--heroOL">
+                  <div className="qnt--plusOL" onClick={() => this.props.addItem(pro)} >+</div>
+                  <div className="pro--qntOL">{pro.quantity}</div>
+                  <div className="qnt--minusOL" onClick={() => this.props.removeItem(pro)}>-</div>
                 </div>
-                <div className="pro--img">
+                <div className="pro--imgOL">
                   
                   <img
-                    className="img--selector--img"
+                    className="img--selector--imgOL"
                     
                     src={pro.gallery[this.state.imgIndex]}
                     
                     alt="pro pictures"
                   />
-                  <div className="img--selector">
-                    <div className="img--selector--arr" onClick={()=>this.clickLeft()}>
-                      <img src={arrowleft} alt="left arrow" />
-                    </div>
-                    <div className="img--selector--arr" onClick={()=> this.clickRigth()}>
-                      <img src={arrowright} alt="right arrow" />
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
-              <div className="line--item"></div>
+              <div className="line--itemOL"></div>
             </div>
           
         </div>
@@ -159,4 +152,4 @@ function mapStateToProps(state) {
     };
   }
   const mapDispatchToProps = { addItem,updateItem,removeItem };
-export default connect(mapStateToProps,mapDispatchToProps)(CartItem)
+export default connect(mapStateToProps,mapDispatchToProps)(CartItemOL)
