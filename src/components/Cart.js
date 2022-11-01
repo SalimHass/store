@@ -42,16 +42,17 @@ export class Cart extends Component {
           <div className="title--line--main"></div>
         </div>
         <div className="cartItems--container">
-        {products.map((p) => (
-          p.quantity? (<CartItem cartItem={p} />): (<></>)
+        {products.map((p, index) => (
+          p.quantity? (<CartItem cartItem={p} index={index} key={p.id} />): (<></>)
           ))}
           </div>
         
         <div className="summery--container">
-        <p className="summery--tax"> Tax 21%:<span className="summery--numbers">{sum * 0.21}</span> </p>
+          
+        <p className="summery--tax"> Tax 21%:<span className="summery--numbers">{currency.symbol}{Math.round(sum * 100*.21) / 100}</span> </p>
         <p className="summery--tax"> Quantity:<span className="summery--numbers">{quantity}</span> </p>
          
-          <p className="summery--tax"> Total:<span className="summery--numbers">{sum }</span> </p>
+          <p className="summery--tax"> Total:<span className="summery--numbers">{currency.symbol}{sum }</span> </p>
           <button className="btn--order">Order</button>
         </div>
       </div>

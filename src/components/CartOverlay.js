@@ -28,14 +28,15 @@ export class CartOverlay extends Component {
     products.map((p) => (quantity = quantity + p.quantity));
 
     return (
-      <div className="overlay--full">
+      <div >
+        <div className="overlay--full"></div>
         <div className="overlay--hero">
           <div className="bag--title--div">
             <h1 className="title--bag">My Bag: {quantity} items</h1>
           </div>
 
-          {products.map((p) =>
-            p.quantity ? <CartItemOL cartItem={p} /> : <></>
+          {products.map((p, index) =>
+            p.quantity ? <CartItemOL cartItem={p} index={index} /> : <></>
           )}
 
           <div className="total--container">
@@ -46,8 +47,8 @@ export class CartOverlay extends Component {
             </div>
           </div>
           <div className="btns--container">
-            <Link to="/cart" className="cart--link">
-              <div className="btn--viewbag">VIEW BAG</div>
+            <Link to="/cart" className="cart--link" >
+              <div className="btn--viewbag clicked" onClick={this.props.overlayClose}>VIEW BAG</div>
             </Link>
             <div className="btn--checkout">CHECK OUT</div>
           </div>

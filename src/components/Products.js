@@ -18,7 +18,7 @@ export class Products extends Component {
   
     return (
         
-      <Link className='links' to={`/product/${this.props.product.id}`}>
+      <Link className='links' to={`/product/${this.props.product.id}`} >
       <div className='container' >
 
 <img className='prod--img' src={this.props.product.gallery[0]} alt="product img"></img>

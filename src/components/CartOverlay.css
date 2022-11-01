@@ -1,19 +1,27 @@
+.overlay--full{
+      position: absolute;
+      width: 2000px;
+      height: 140vh;
+   right:0;
+   top: 52px;
+   z-index: 0;
+   background: rgba(57, 55, 72, 0.22);
+   }
+
+
 .overlay--hero{
     position: absolute;
 width: 325px;
 height: 677px;
 right: 0px;
-top: 60px;
+top: 50px;
 padding: 32px 16px;
 display: flex;
 flex-direction: column;
 overflow: scroll;
 
-
-
-
-background: #9e8888;
-    z-index: 0;
+background: #FFFFFF;
+    z-index: 1;
 }
 .title--bag{
     font-family: 'Raleway';
@@ -57,12 +65,18 @@ height: 43px;
 
 background: #FFFFFF;
 border: 1px solid #1D1F22;
+cursor: pointer;
 
 }
+.clicked:active {
+    background-color: rgb(52, 2, 109);
+  }
+  
 .btns--container{
     display: flex;
     justify-content: space-between;
 }
+
 
 .cart--link{
     text-decoration: none;

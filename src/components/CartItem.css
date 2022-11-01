@@ -6,3 +6,11 @@
     padding-right: 100px;
 
   }
+
+  .click{
+    cursor: pointer;
+  }
+
+  .click:active {
+    background-color: rgb(52, 2, 109);
+  }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import arrowleft from "../img/arrowleft.png";
-import arrowright from "../img/arrowright.png";
+
 import { addItem,updateItem,removeItem } from "./cart/cartSlice";
 import "./CartItemOL.css";
 
@@ -13,23 +12,23 @@ export class CartItemOL extends Component {
     // Set initial state
     this.state = {imgIndex : 0,
     }
-    this.clickLeft = this.clickLeft.bind(this)
+    this.attrAdded = this.attrAdded.bind(this)
+    
   }
-  clickLeft(){
-    (this.state.imgIndex-1)<0? (this.setState({imgIndex : this.props.cartItem.gallery.length-1 })):(this.setState({imgIndex : this.state.imgIndex-1 }))
-     
-  }
-  clickRigth(){
-    (this.state.imgIndex+1)>this.props.cartItem.gallery.length-1? (this.setState({imgIndex : 0 })):(this.setState({imgIndex : this.state.imgIndex+1 }))
-     
-  }
+  attrAdded(name, value) {
+    const pro = {...this.props.cartItem}
+    pro.attrDetails = {...pro.attrDetails, [name]: value}
+    this.props.updateItem({'index': this.props.index, 'product': pro})
+
+}
+  
 
   render() {
     
 
     const pro=this.props.cartItem
     const currency = this.props.currency;
-    console.log(this.props)
+    
     
     
 
@@ -80,7 +79,7 @@ export class CartItemOL extends Component {
                                   className="attr--color--boxOL color--selectedOL"
                                   style={{ background: `${item.value}` }}
                                 ></div></>):(<><div
-                                  onClick={() => this.props.updateItem(this.props.cartItem)}
+                                  onClick={() => this.attrAdded(att.name, item.value)}
 
                                   className="attr--color--boxOL"
                                   style={{ background: `${item.value}` }}
@@ -92,7 +91,7 @@ export class CartItemOL extends Component {
                           <div className="attr--not--colorOL">
                             {att.items.map((item) => (
                                 this.props.cartItem.attrDetails[att.name]!==item.value? (<div
-                                  onClick={() => this.props.updateItem(this.props.cartItem)}
+                                  onClick={() => this.attrAdded(att.name, item.value)}
                                   className="attr--textOL"
                                 >
                                   
@@ -114,9 +113,9 @@ export class CartItemOL extends Component {
                   ))}
                 </div>
                 <div className="qnt--heroOL">
-                  <div className="qnt--plusOL" onClick={() => this.props.addItem(pro)} >+</div>
+                  <div className="qnt--plusOL clicked" onClick={() => this.props.addItem(pro)} >+</div>
                   <div className="pro--qntOL">{pro.quantity}</div>
-                  <div className="qnt--minusOL" onClick={() => this.props.removeItem(pro)}>-</div>
+                  <div className="qnt--minusOL clicked" onClick={() => this.props.removeItem(pro)}>-</div>
                 </div>
                 <div className="pro--imgOL">
                   

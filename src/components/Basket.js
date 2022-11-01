@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import "./Basket.css"
 import basket from "../img/basket.svg"
 import { connect } from 'react-redux'
-import {Link} from "react-router-dom";
 import CartOverlay from "./CartOverlay"
 
 
@@ -25,15 +24,18 @@ export class Basket extends Component {
     )
     return (
       
-        <div onClick={this.showOverLay} className="overlay--click">
-          <div className='basket--nav' >
+        <div className='basket--nav'>
+          
+
+          <div onClick={this.showOverLay} className="overlay--click" >
             
-          {this.state.showOL?(<CartOverlay/>):(<></>)}
 
 
         <img className='basket--img'  src={basket} alt="Basket"/>
+          
         <div className='basket--items'>{sum}</div>
           </div>
+          {this.state.showOL?(<CartOverlay overlayClose={this.showOverLay} />):(<></>)}
         </div>
         
       

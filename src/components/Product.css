@@ -9,9 +9,7 @@
 
 }
 
-.product--details{
 
-}
 .product--brand{
     font-family: 'Raleway';
     
@@ -43,6 +41,10 @@
     
     
 }
+.clicked:active {
+    background-color: rgb(52, 2, 109);
+  }
+  
 
 .attr--text{
     display: flex;
@@ -52,6 +54,7 @@
     align-items: center;
     justify-content: center;
     margin-right: 12px;
+    cursor: pointer;
     
 }
 
@@ -91,7 +94,12 @@ margin-bottom:20px ;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
+    cursor: pointer;
+
 }
+.addToCart--btn:active {
+    background-color: rgb(52, 2, 109);
+  }
 
 .product--discreption{
     margin-top:  40px; 
@@ -116,8 +124,8 @@ margin-bottom:20px ;
     margin-left: 1px;
     margin-right: 10px;
     margin-bottom: 24px;
-    padding:1px
-    
+    padding:1px;
+    cursor: pointer;
     
 
 }
@@ -138,4 +146,16 @@ margin-bottom:20px ;
     color: #ffffff;
     background-color: #1D1F22;
     
+}
+
+.addToCart--btn--unactive{
+    background-color: #000000;
+    width: 292px;
+    height: 52px;
+    color: white;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
 }

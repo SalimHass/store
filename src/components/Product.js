@@ -16,6 +16,7 @@ export class Product extends Component {
     
     this.state = {productAttrAdded: {details: {}}}
     this.attrAdded = this.attrAdded.bind(this)
+    
   }
   attrAdded(name, value){
     
@@ -50,16 +51,17 @@ export class Product extends Component {
 
   render() {
     const { productId } = this.props.router.params;
-    console.log(this.state.productAttrAdded,"inside")
+    const atrAddLength=this.attrAddLenght=Object.keys(this.state.productAttrAdded.details).length
+    
     
     
 
     return (
-      <Query query={GET_PRODUCT} variables={{ productId }}>
+      <Query  query={GET_PRODUCT} variables={{ productId }} >
         {({ loading, error, data }) => {
           if (loading) return "Loading...";
           if (error) return `Error! ${JSON.stringify(error, null, 2)}`;
-          
+          const attLength =Object.keys(data.product.attributes).length
           const currentCurrency = this.props.selectedCurrency
           let price = data.product.prices[0]
           for(const p of data.product.prices)
@@ -95,7 +97,7 @@ export class Product extends Component {
                         <div className="attr--name"> {att.name}: </div>
                         <div>
                           {att.type === "swatch" ? (
-                            <div className="attr--color">
+                            <div className="attr--color ">
 
                               {att.items.map((item) => (
                                 this.state.productAttrAdded.details.Color===item.value? (<><div
@@ -147,14 +149,22 @@ export class Product extends Component {
                     <div className="product--price--number">
                       {`${this.props.selectedCurrency.symbol} ${price}`}
                     </div>
-
+                                    
                     
-                    <button
+                    {attLength===atrAddLength?(<button
                       className="addToCart--btn"
                       onClick={() => this.addToCart(data)}
                     >
                       ADD TO CART
-                    </button>
+                    </button>):(<button
+                      className="addToCart--btn--unactive"
+                      
+                    >
+                      Please Select All Options
+                    </button>)}
+
+                    
+                    
                     <div className="product--discreption">
                       {parse(`${data.product.description}`)}
                     </div>

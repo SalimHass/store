@@ -1,14 +1,6 @@
 
 
-.overlay--fullOL{
- /*   position: absolute;
-width: 1440px;
-height: 1435px;
-left: 0px;
-top: 78px;
 
-background: rgba(57, 55, 72, 0.22);*/
-}
 .cart--containerOL{
     height: 190px;
     margin-bottom: 42px;
@@ -71,11 +63,13 @@ font-size: 16px;
   width: 16px;
   height: 16px;
   margin-right:8px;
-  
+  cursor: pointer;
+
  
 }
 .attr--not--colorOL {
   display: flex;
+  
   
   
 }
@@ -89,6 +83,10 @@ font-size: 16px;
   justify-content: center;
   font-size: 14px;
   margin-right: 8px;
+  cursor: pointer;
+  min-width: 24px;
+  height: 24px;
+  width: auto;
   
 }
 .attr--nameOL {
@@ -179,7 +177,13 @@ font-size: 16px;
   align-items: center;
   height: 24px;
   width: 24px;
+  cursor: pointer;
 }
+.clicked:active {
+  background-color: rgb(52, 2, 109);
+}
+
+
 .qnt--minusOL {
   border: 1px solid #1d1f22;
   
@@ -189,6 +193,7 @@ font-size: 16px;
   align-items: center;
   height: 24px;
   width: 24px;
+  cursor: pointer;
 
 }
 
@@ -245,14 +250,17 @@ border: none;
 .attr--text--selectedOL{
   display: flex;
   border: 1px solid #1D1F22;
+  min-width: 24px;
   height: 24px;
-  width: 24px;
+  width: auto;
   font-size: 14px;
   align-items: center;
   justify-content: center;
+
   
   color: #ffffff;
   background-color: #1D1F22;
   margin-right: 8px;
+  cursor: pointer;
   
 }

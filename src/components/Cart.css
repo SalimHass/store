@@ -1,5 +1,4 @@
-.cart--hero {
-}
+
 
 .title--div {
   padding-left: 100px;
@@ -105,7 +104,7 @@ font-size: 30px;
 
 .img--selector--arr {
   background: rgba(0, 0, 0, 0.73);
-
+  cursor: pointer;
   width: 24px;
   height: 24px;
   align-items: center;
@@ -154,8 +153,9 @@ font-size: 24px;
   width: 56px;
   grid-template-columns: 1fr 1fr;
   position: relative;
-    bottom:35px;
-  left: 128px;
+    top:254px;
+  right: 60px;
+
 }
 
 
@@ -189,6 +189,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 24px;
 padding-left: 100px;
+
     
 }
 
@@ -243,3 +244,4 @@ border: none;
   background-color: #1D1F22;
   
 }
+

@@ -36,21 +36,17 @@ export const cartSlice = createSlice({
      
     },
     updateItem: (state, action) => {
-      const prodId = action.payload.id;
+      
+      const prodIndex = action.payload.index;
       const newProduct = action.payload.product
-      const products = state.products.map((pro) => {
-        if (prodId===pro.id) {
-          pro = {...pro,attrDetails:newProduct.attrDetails}
-        }
-        console.log(action.payload,"payload")
-        
-        return pro;
+      state.products = state.products.map((pro, index) => {
+          if (prodIndex === index) {
+              pro = {...pro, attrDetails: newProduct.attrDetails}
+          }
+          return pro;
       });
-      state.products = products;
-      console.log(products,"products")
-     
-    },
   },
+},
 });
 
 export const { addItem,updateItem,removeItem } = cartSlice.actions;
