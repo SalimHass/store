@@ -62,3 +62,21 @@
 .container:hover .basket--img--pro--circ {
   display: flex;
 }
+
+
+.container--out{
+  background: #FFFFFF;
+opacity: 0.5;
+
+}
+
+.text--outof{
+  position: relative;
+  top: 151px;
+  left:25%;
+  color: #8D8F9A;
+  font-family: 'Raleway';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+}
