@@ -7,6 +7,8 @@
 
 .gallery-pics{
     max-height: 88px;
+   
+    
 
 }
 
@@ -110,6 +112,10 @@ margin-bottom:20px ;
 
 .main--pic{
    max-height: 550px;
+   max-width: 550px;
+   margin-left:25px;
+   
+
 }
 .attr--color{
     display: flex;

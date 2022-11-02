@@ -79,9 +79,10 @@ export class Product extends Component {
                         <>
                             <div className="product--container">
                                 <div className="">
+                                    {console.log(data.product.gallery)}
                                     {data.product.gallery.map((pic , index) => (
                                         
-                                        <img className="gallery-pics" src={pic} alt="pordcut-img" onClick={this.selectImg(index)} />
+                                        <img className="gallery-pics" src={pic} alt="pordcut-img" onClick={()=>this.selectImg(index)} />
                                         
 
                                     ))}
