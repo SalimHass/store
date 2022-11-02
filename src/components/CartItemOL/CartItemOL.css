@@ -37,8 +37,8 @@ font-size: 16px;
   position: relative;
   width: auto;
   height: 1px;
-  
- 
+
+
 
   background: #e5e5e5;
 }
@@ -56,8 +56,8 @@ font-size: 16px;
 .attr--colorOL {
   display: flex;
   align-items: center;
- 
-  
+
+
 }
 .attr--color--boxOL {
   width: 16px;
@@ -65,13 +65,13 @@ font-size: 16px;
   margin-right:8px;
   cursor: pointer;
 
- 
+
 }
 .attr--not--colorOL {
   display: flex;
-  
-  
-  
+
+
+
 }
 
 .attr--textOL {
@@ -87,7 +87,7 @@ font-size: 16px;
   min-width: 24px;
   height: 24px;
   width: auto;
-  
+
 }
 .attr--nameOL {
   font-family: "Roboto Condensed";
@@ -96,7 +96,7 @@ font-size: 16px;
   font-size: 14px;
   line-height: 18px;
   text-transform: uppercase;
- 
+
 }
 .product--price--numberOL {
   font-family: "Raleway";
@@ -104,7 +104,7 @@ font-size: 16px;
   font-weight: 700;
   font-size: 16px;
   line-height: 18px;
- 
+
 }
 
 .img--selector--imgOL {
@@ -112,7 +112,7 @@ font-size: 16px;
     max-width: 121px;
 
   object-fit: cover;
- 
+
 }
 
 .img--selector--arrOL {
@@ -123,13 +123,13 @@ font-size: 16px;
   align-items: center;
   justify-content: center;
   display: flex;
- 
+
 }
 
 
 .pro--detailsOL {
   display: flex;
-  
+
 }
 .init--detailsOL {
   margin-right: auto;
@@ -153,9 +153,9 @@ font-size: 16px;
 
 .pro--imgOL {
     margin-bottom: 0px;
-    
 
- 
+
+
 }
 .img--selectorOL {
   display: grid;
@@ -170,7 +170,7 @@ font-size: 16px;
 
 .qnt--plusOL {
   border: 1px solid #1d1f22;
-  
+
   font-size: 24px;
   display: flex;
   justify-content: center;
@@ -186,7 +186,7 @@ font-size: 16px;
 
 .qnt--minusOL {
   border: 1px solid #1d1f22;
-  
+
   font-size: 24px;
   display: flex;
   justify-content: center;
@@ -204,7 +204,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 24px;
 
-    
+
 }
 
 .summery--numbersOL{
@@ -242,7 +242,7 @@ border: none;
 
 
 .color--selectedOL{
-   
+
   border: 1px solid #5ECE7B;;
 }
 
@@ -257,10 +257,10 @@ border: none;
   align-items: center;
   justify-content: center;
 
-  
+
   color: #ffffff;
   background-color: #1D1F22;
   margin-right: 8px;
   cursor: pointer;
-  
+
 }

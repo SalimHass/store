@@ -38,7 +38,7 @@ font-size: 30px;
   position: relative;
   width: auto;
   height: 1px;
-  
+
   margin-right: 100px;
   margin-top: 32px;
 
@@ -124,6 +124,7 @@ margin-bottom: 20px;
 .pro--details {
   display: flex;
   padding-top: 24px;
+  min-height: 300px;
 }
 .init--details {
   margin-right: auto;
@@ -146,7 +147,7 @@ font-size: 24px;
 
 .pro--img {
     margin-bottom: 0px;
- 
+
 }
 .img--selector {
   display: grid;
@@ -162,7 +163,7 @@ font-size: 24px;
 
 .qnt--plus {
   border: 1px solid #1d1f22;
-  
+
   font-size: 24px;
   display: flex;
   justify-content: center;
@@ -172,7 +173,7 @@ font-size: 24px;
 }
 .qnt--minus {
   border: 1px solid #1d1f22;
-  
+
   font-size: 24px;
   display: flex;
   justify-content: center;
@@ -190,7 +191,7 @@ font-weight: 400;
 font-size: 24px;
 padding-left: 100px;
 
-    
+
 }
 
 .summery--numbers{
@@ -242,6 +243,6 @@ border: none;
   margin-right: 12px;
   color: #ffffff;
   background-color: #1D1F22;
-  
+
 }
 

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { addItem } from "./cart/cartSlice";
-import { withRouter } from "../router/withRouter";
+import { addItem } from "../../features/cart/cartSlice";
+import { withRouter } from "../../router/withRouter";
 import "./CartOverlay.css";
 import { Link } from "react-router-dom";
 
-import CartItemOL from "./CartItemOL";
+import CartItemOL from "../CartItemOL/CartItemOL";
 
 export class CartOverlay extends Component {
   render() {
@@ -29,21 +29,22 @@ export class CartOverlay extends Component {
 
     return (
       <div >
-        <div className="overlay--full"></div>
+        <div className="overlay--full " onClick={this.props.overlayClose}/>
         <div className="overlay--hero">
           <div className="bag--title--div">
             <h1 className="title--bag">My Bag: {quantity} items</h1>
           </div>
-
-          {products.map((p, index) =>
-            p.quantity ? <CartItemOL cartItem={p} index={index} /> : <></>
+          <div>
+            {quantity ? (<>
+              {products.map((p, index) =>
+             <CartItemOL cartItem={p} index={index} /> 
           )}
 
           <div className="total--container">
             <div className="summery--total"> Total: </div>
             <div className="summery--numbers">
               {this.props.currency.symbol}
-              {sum}
+              {Math.round(sum * 100) / 100}
             </div>
           </div>
           <div className="btns--container">
@@ -51,7 +52,21 @@ export class CartOverlay extends Component {
               <div className="btn--viewbag clicked" onClick={this.props.overlayClose}>VIEW BAG</div>
             </Link>
             <div className="btn--checkout">CHECK OUT</div>
+          </div></>):(<>
+            <div className="total--container">
+            <div className="summery--total bag--empty"> no items yet </div>
+            
           </div>
+          <div className="btns--container">
+            
+              <div className="btn--viewbag clicked btn--empty" onClick={this.props.overlayClose}>back</div>
+            
+            <div className="btn--checkout">CHECK OUT</div>
+          </div>
+          </>)}
+          </div>
+
+          
         </div>
       </div>
     );

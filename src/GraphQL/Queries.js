@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import {gql} from "@apollo/client";
 
 export const LOAD_DATA = gql`
   query {
@@ -65,7 +65,7 @@ query products($category: String!) {
 }`;
 
 
-export const GET_TEST_PRODUCT=gql`
+export const GET_TEST_PRODUCT = gql`
 query {
   product(id:  "ps-5" ){
     name

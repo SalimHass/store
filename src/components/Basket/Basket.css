@@ -10,7 +10,7 @@
 
 .basket--items{
     position: absolute;
-    
+
     display: flex;
     color: white;
     background-color: black;
@@ -21,11 +21,11 @@
     justify-content: center;
     top:-1rem;
     left:.75rem;
- 
+
 }
 
 .overlay--click{
     position: relative;
     cursor: pointer;
-    
+
 }

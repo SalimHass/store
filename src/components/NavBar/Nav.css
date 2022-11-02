@@ -1,3 +1,5 @@
+
+
 nav {
   display: flex;
   width: auto;
@@ -8,7 +10,8 @@ nav {
   text-transform: uppercase;
   font-family: "Raleway";
   
-  
+
+
 }
 
 .img--logo {
@@ -33,11 +36,11 @@ nav {
   font-weight: 600;
   position: relative;
   margin: 2%;
-  
+
   font-weight: 400;
   font-size: 16px;
   text-decoration: none;
-  
+
 }
 
 .cat--selected::after {
@@ -54,13 +57,13 @@ nav {
   height: 32px;
   position:absolute;
   left: 50%;
-  
+
 }
 
 .cur--select{
     padding-right: 22px;
     margin-left: auto;
 
-   
+
 }
 
