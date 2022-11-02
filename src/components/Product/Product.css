@@ -6,7 +6,11 @@
 }
 
 .gallery-pics{
-    max-height: 88px;
+    
+    margin-bottom: 32px;
+    height: 88px;
+    width: 100px;
+    object-fit: contain;
    
     
 
