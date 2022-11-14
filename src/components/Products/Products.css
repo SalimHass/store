@@ -1,27 +1,30 @@
 .container {
-  width: 380px;
-  min-height: 444px;
-
-
+  width: 386px;
+  height: 444px;
+  padding: 16px;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-}
+  justify-content: start;
 
+  align-items: flex-start;
+  text-decoration: none;
+  cursor: pointer;
+}
+.img--container {
+  width: 386px;
+}
 .prod--img {
-  width: 356px;
-  height: 338px;
-  object-fit: contain;
+  width: 100%;
+  max-height: 338px;
+  object-fit: cover;
   margin-bottom: 24px;
 }
 .prod--name {
-    font-family: 'Raleway';
+  font-family: "Raleway";
   font-size: 18px;
   line-height: 160%;
   align-self: start;
-  margin-left: 16px;
 }
 .prod--price {
   align-self: start;
@@ -30,53 +33,63 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 160%;
-  margin-left: 16px;
-
 }
-.container:hover{
-    box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
+.container:hover {
+  box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
 }
 
-.links{
-  color:inherit;
+.links {
+  color: inherit;
   text-decoration: none;
 }
 
-
-
-.basket--img--pro--circ{
+.basket--img--pro--circ {
   position: relative;
-  display:flex;
+
   justify-content: center;
   align-items: center;
-  background: #5ECE7B;
+  background: #5ece7b;
   border-radius: 100%;
   min-height: 52px;
   height: 52px;
   width: 52px;
   bottom: 110px;
-  left:25%;
+  left: 320px;
   display: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container:hover .basket--img--pro--circ {
   display: flex;
 }
 
-
-.container--out{
-  background: #FFFFFF;
-opacity: 0.5;
-
+.container--out {
+  position: absolute;
+  
+  background: #ffffff;
+  opacity: 0.5;
+  width: 386px;
+  height: 444px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  text-decoration: none;
+  z-index: -1;
+}
+.container--out:hover {
+  box-shadow: 0px 4px 35px rgba(168, 172, 176, 0.19);
 }
 
-.text--outof{
+.text--outof {
   position: relative;
   top: 151px;
-  left:25%;
-  color: #8D8F9A;
-  font-family: 'Raleway';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
+  left: 25%;
+  color: #8d8f9a;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
 }

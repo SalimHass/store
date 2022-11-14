@@ -1,3 +1,15 @@
 .hero {
     padding-left: 4%;
 }
+.navbar--container{
+    position:fixed;
+    top: 0;
+    background-color: #ffff;
+    
+    width: 100%;
+    
+}
+
+.contents--conatiner{
+    margin-top:160px
+}

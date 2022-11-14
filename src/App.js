@@ -52,20 +52,26 @@ class App extends Component {
                                 data.categories[this.state.selectedCategoryIndex].name;
                             return (
                                 <div className="hero">
+                                    <div className="navbar--container">
+
                                     <Nav
                                         key={"nav"}
                                         cats={data}
                                         onCategoryChanged={this.handler}
                                         selectedCategoryIndex={this.state.selectedCategoryIndex}
-                                    />
+                                        />
+                                        </div>
+                                        <div className="contents--conatiner">
+
                                     <Routes>
                                         <Route
                                             path="/"
                                             element={<Category selectedCategory={category}/>}
-                                        />
+                                            />
                                         <Route path="/product/:productId" element={<Product/>}/>
                                         <Route path="/cart" element={<Cart/>}/>
                                     </Routes>
+                                            </div>
                                 </div>
                             );
                         }}

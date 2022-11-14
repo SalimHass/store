@@ -32,7 +32,7 @@ export class CartOverlay extends Component {
         <div className="overlay--full " onClick={this.props.overlayClose}/>
         <div className="overlay--hero">
           <div className="bag--title--div">
-            <h1 className="title--bag">My Bag: {quantity} items</h1>
+            <h1 className="title--bag">My Bag, {quantity} <span>items</span></h1>
           </div>
           <div>
             {quantity ? (<>

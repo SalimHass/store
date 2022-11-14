@@ -1,94 +1,109 @@
 .overlay--full {
-    position: fixed;
-    width: 100%; 
-    height: 100%; 
-    right: 0;
-    top: 80px;
-    z-index: 0;
-    background: rgba(57, 55, 72, 0.22);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 80px;
+  z-index: 0;
+  background: rgba(57, 55, 72, 0.22);
 }
 
-
 .overlay--hero {
-    position: absolute;
-    width: 325px;
-    height: 677px;
-    right: 0;
-    top: 40px;
-    padding: 32px 16px;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    background: #FFFFFF;
-    z-index: 1;
+  position: absolute;
+  width: 325px;
+  height: 677px;
+  right: 0;
+  top: 40px;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background: #ffffff;
+  z-index: 1;
+  
 }
 
 .title--bag {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #1d1f22;
 }
 
+.title--bag span {
+  text-transform: lowercase;
+}
 
 .total--container {
-    display: flex;
-
+  display: flex;
+  
 }
 
 .summery--total {
-    margin-right: auto;
+  margin-right: auto;
+  text-transform: capitalize;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #1d1f22;
+}
+.summery--numbers{
+    font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+color: #1D1F22;
 }
 
-
 .btn--checkout {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #5ECE7B;
-    width: 140px;
-    height: 43px;
-    border: #5ECE7B;
-    color: white;
-    cursor: not-allowed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #5ece7b;
+  
+  border: none;
+  color: white;
+  cursor: not-allowed;
+  padding: 16px 32px;
 }
 
 .btn--viewbag {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 140px;
-    height: 43px;
-    background: #FFFFFF;
-    border: 1px solid #1D1F22;
-    cursor: pointer;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background: #ffffff;
+  border: 1px solid #1d1f22;
+  cursor: pointer;
+  padding: 16px 32px;
 }
 
 .clicked:active {
-    background-color: rgb(52, 2, 109);
+  background-color: rgb(52, 2, 109);
 }
 
 .btns--container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 34px;
 }
-
 
 .cart--link {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-.bag--empty{
-    margin: auto;
-    padding:15px 0px;
+.bag--empty {
+  margin: auto;
+  padding: 15px 0px;
 }
 
-.btn--empty{
-    background-color: #1D1F22;
-    color: #FFFFFF;
+.btn--empty {
+  background-color: #1d1f22;
+  color: #ffffff;
 }
-

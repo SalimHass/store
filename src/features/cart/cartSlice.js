@@ -9,6 +9,7 @@ export const cartSlice = createSlice({
     reducers: {
         addItem: (state, action) => {
             const product = {...action.payload, quantity: 1};
+            console.log(action.payload,"actionpayload")
             let found = false;
             const products = state.products.map((pro) => {
                 if (product.id === pro.id && (_.isEqual(product.attrDetails, pro.attrDetails))) {

@@ -79,18 +79,21 @@ export class Product extends Component {
                         <>
                             <div className="product--container">
                                 <div className="">
-                                    {console.log(data.product.gallery)}
+                                    {console.log(data.product)}
                                     {data.product.gallery.map((pic , index) => (
+                                        <div className="gallery-pics--container">
+
                                         
 
                                         <img  className="gallery-pics" src={pic} alt="pordcut-img" onClick={()=>this.selectImg(index)} />
+                                        </div>
                                        
                                         
 
                                     ))}
                                    
                                 </div>
-                                <div>
+                                <div className="main--pic--div">
                                     <img
                                         className="main--pic"
                                         src={data.product.gallery[this.state.imgIndex]}
@@ -164,8 +167,7 @@ export class Product extends Component {
                                             {`${this.props.selectedCurrency.symbol} ${price}`}
                                         </div>
 
-
-                                        {attLength === atrAddLength ? (<button
+                                        {data.product.inStock? (<>{attLength === atrAddLength ? (<button
                                             className="addToCart--btn"
                                             onClick={() => this.addToCart(data)}
                                         >
@@ -175,7 +177,13 @@ export class Product extends Component {
 
                                         >
                                             Please Select All Options
+                                        </button>)}</>):(<button
+                                            className="addToCart--btn--unactive"
+
+                                        >
+                                            Out Of Stock
                                         </button>)}
+                                        
 
 
                                         <div className="product--discreption">

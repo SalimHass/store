@@ -15,7 +15,7 @@ export class Category extends Component {
                     if (error) return `Error! ${JSON.stringify(error, null, 2)}`;
                     return (
                         
-                        <>
+                        <div >
                         <div className="cat--name">{category}</div>
                             <div className="products--container">
                                 {data.category.products.map((product) => (
@@ -23,7 +23,7 @@ export class Category extends Component {
                                 ))}
                             </div>
 
-                        </>
+                        </div>
                     );
                 }}
             </Query>

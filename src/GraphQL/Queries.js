@@ -53,6 +53,16 @@ query products($category: String!) {
       gallery
       description
       brand
+      attributes {
+        id
+        name
+        type
+        items {
+          displayValue
+          value
+          id
+        }
+      }
       prices {
         amount
         currency {
