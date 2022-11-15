@@ -24,25 +24,25 @@ export class CartOverlay extends Component {
 
     let sum = 0;
     products.map((p) => (sum = sum + p.price[currIndex].amount * p.quantity));
-    let quantity = 0;
-    products.map((p) => (quantity = quantity + p.quantity));
+    let overallQuantity = 0;
+    products.map((p) => (overallQuantity = overallQuantity + p.quantity));
 
     return (
       <div >
         <div className="overlay--full " onClick={this.props.overlayClose}/>
         <div className="overlay--hero">
           <div className="bag--title--div">
-            <h1 className="title--bag">My Bag, {quantity} <span>items</span></h1>
+            <h1 className="title--bag">My Bag, {overallQuantity} <span>items</span></h1>
           </div>
           <div>
-            {quantity ? (<>
+            {overallQuantity ? (<>
               {products.map((p, index) =>
-             <CartItemOL cartItem={p} index={index} /> 
+             p.quantity>0 && <CartItemOL cartItem={p} index={index} />
           )}
 
           <div className="total--container">
-            <div className="summery--total"> Total: </div>
-            <div className="summery--numbers">
+            <div className="summary--total"> Total: </div>
+            <div className="summary--numbers">
               {this.props.currency.symbol}
               {Math.round(sum * 100) / 100}
             </div>
@@ -54,7 +54,7 @@ export class CartOverlay extends Component {
             <div className="btn--checkout">CHECK OUT</div>
           </div></>):(<>
             <div className="total--container">
-            <div className="summery--total bag--empty"> no items yet </div>
+            <div className="summary--total bag--empty"> no items yet </div>
             
           </div>
           <div className="btns--container">

@@ -28,13 +28,12 @@ export const cartSlice = createSlice({
         },
         removeItem: (state, action) => {
             const product = action.payload;
-            const products = state.products.map((pro) => {
-                if (product.id === pro.id && (_.isEqual(product.attrDetails, pro.attrDetails))) {
+            state.products = state.products.map((pro) => {
+                if (product.id === pro.id && (_.isEqual(product.attrDetails, pro.attrDetails)) && pro.quantity > 0) {
                     pro.quantity = pro.quantity - 1;
                 }
                 return pro;
             });
-            state.products = products;
 
         },
         updateItem: (state, action) => {

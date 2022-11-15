@@ -56,7 +56,7 @@ export class Product extends Component {
 
     render() {
         const {productId} = this.props.router.params;
-        const atrAddLength = this.attrAddLenght = Object.keys(this.state.productAttrAdded.details).length
+        const atrAddLength = Object.keys(this.state.productAttrAdded.details).length
 
 
         return (
@@ -79,7 +79,6 @@ export class Product extends Component {
                         <>
                             <div className="product--container">
                                 <div className="">
-                                    {console.log(data.product)}
                                     {data.product.gallery.map((pic , index) => (
                                         <div className="gallery-pics--container">
 
@@ -87,8 +86,6 @@ export class Product extends Component {
 
                                         <img  className="gallery-pics" src={pic} alt="pordcut-img" onClick={()=>this.selectImg(index)} />
                                         </div>
-                                       
-                                        
 
                                     ))}
                                    

@@ -1,57 +1,57 @@
-.product--container{
+.product--container {
     padding-top: 40px;
+    padding-left:100px;
     display: grid;
     grid-template-columns: 100px 1fr 1fr;
 
 }
 
-.gallery-pics--container{
+.gallery-pics--container {
     height: 88px;
     width: 100px;
     margin-bottom: 32px;
 
 }
 
-.gallery-pics{
-    
+.gallery-pics {
+
     margin-bottom: 32px;
     height: 100%;
     width: 100%;
     object-fit: contain;
-   
-    
 
 }
 
-
-.main--pic--div{
+.main--pic--div {
     height: 510px;
     width: 610px;
-    object-fit: cover;
-    
+
+
 }
-.main--pic{
+
+.main--pic {
     height: 100%;
     width: 100%;
-    
 
 
 }
-.product--brand{
+
+.product--brand {
     font-family: 'Raleway';
     font-weight: 600;
     font-size: 30px;
 
 }
-.product--name{
+
+.product--name {
     font-family: 'Raleway';
     font-weight: 400;
     font-size: 30px;
-    margin-bottom :43px;
+    margin-bottom: 43px;
 
 }
 
-.attr--name{
+.attr--name {
     font-family: 'Roboto Condensed';
     font-style: normal;
     font-weight: 700;
@@ -61,18 +61,19 @@
     margin-bottom: 8px;
 }
 
-.attr--not--color{
+.attr--not--color {
     display: flex;
     margin-bottom: 8px;
 
 
 }
+
 .clicked:active {
     background-color: rgb(52, 2, 109);
-  }
+}
 
 
-.attr--text{
+.attr--text {
     display: flex;
     border: 1px solid #1D1F22;
     height: 45px;
@@ -80,25 +81,23 @@
     align-items: center;
     justify-content: center;
     margin-right: 12px;
-    
+
 
 }
 
 
-
-
-.product--price--number{
+.product--price--number {
     font-family: 'Raleway';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 18px;
-margin-bottom:20px ;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 18px;
+    margin-bottom: 20px;
 
 
 }
 
-.product--price{
+.product--price {
     text-transform: uppercase;
     font-family: 'Roboto Condensed';
     font-style: normal;
@@ -110,8 +109,8 @@ margin-bottom:20px ;
 
 }
 
-.addToCart--btn{
-    background:#5ECE7B ;
+.addToCart--btn {
+    background: #5ECE7B;
     width: 292px;
     height: 52px;
     border: #5ECE7B;
@@ -120,52 +119,55 @@ margin-bottom:20px ;
     font-style: normal;
     font-weight: 600;
     font-size: 16px;
-    
+
 
 }
+
 .addToCart--btn:active {
     background-color: rgb(52, 2, 109);
-  }
+}
 
-.product--discreption{
-    margin-top:  40px;
+.product--discreption {
+    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     width: 292px;
 }
 
-.main--pic{
-   max-height: 550px;
-   max-width: 550px;
-   margin-left:25px;
-   
+.main--pic {
+    max-height: 550px;
+    max-width: 550px;
+    margin-left: 25px;
+
 
 }
-.attr--color{
+
+.attr--color {
     display: flex;
     margin-bottom: 8px;
 
 
 }
-.attr--color--box{
+
+.attr--color--box {
     width: 32px;
     height: 32px;
     margin-top: 1px;
     margin-left: 1px;
     margin-right: 10px;
     margin-bottom: 24px;
-    padding:1px;
+    padding: 1px;
     cursor: pointer;
 
 
 }
 
-.color--selected{
+.color--selected {
     border: 1px solid #5ECE7B;;
 }
 
 
-.attr--text--selected{
+.attr--text--selected {
     display: flex;
     border: 1px solid #1D1F22;
     height: 45px;
@@ -178,7 +180,7 @@ margin-bottom:20px ;
 
 }
 
-.addToCart--btn--unactive{
+.addToCart--btn--unactive {
     background-color: #000000;
     width: 292px;
     height: 52px;

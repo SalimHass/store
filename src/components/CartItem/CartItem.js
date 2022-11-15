@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import arrowleft from "../../img/arrowleft.png";
-import arrowright from "../../img/arrowright.png";
+import arrowleft from "../../img/arrowleft.svg";
+import arrowright from "../../img/arrowright.svg";
 import {addItem, removeItem, updateItem} from "../../features/cart/cartSlice";
 import "./CartItem.css";
 

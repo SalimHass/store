@@ -5,8 +5,8 @@
     position:fixed;
     top: 0;
     background-color: #ffff;
-    
     width: 100%;
+    z-index: 10;
     
 }
 

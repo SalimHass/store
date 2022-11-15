@@ -42,7 +42,7 @@ export class CartItemOL extends Component {
 
 
         return (
-            <div className="cart--prod--heroOL">
+            <div>
 
                 <div className="cart--containerOL ">
 
@@ -65,8 +65,6 @@ export class CartItemOL extends Component {
                                                     {att.items.map((item) => (
                                                         this.props.cartItem.attrDetails.Color === item.value ? (<>
                                                             <div
-
-
                                                                 className="attr--color--boxOL color--selectedOL"
                                                                 style={{background: `${item.value}`}}
                                                             />
@@ -86,13 +84,13 @@ export class CartItemOL extends Component {
                                                     {att.items.map((item) => (
                                                         this.props.cartItem.attrDetails[att.name] !== item.value ? (<div
                                                             onClick={() => this.attrAdded(att.name, item.value)}
-                                                            className="attr--textOL"
+                                                            className="attr--textOL attr--text-general-OL"
                                                         >
 
                                                             {item.value}
                                                         </div>) : (<div
 
-                                                            className="attr--text--selectedOL"
+                                                            className="attr--text--selectedOL attr--text-general-OL"
                                                         >
 
                                                             {item.value}
@@ -107,9 +105,9 @@ export class CartItemOL extends Component {
                                 ))}
                             </div>
                             <div className="qnt--heroOL">
-                                <div className="qnt--plusOL clicked" onClick={() => this.props.addItem(pro)}>+</div>
+                                <div className="qnt--OL clicked" onClick={() => this.props.addItem(pro)}>+</div>
                                 <div className="pro--qntOL">{pro.quantity}</div>
-                                <div className="qnt--minusOL clicked" onClick={() => this.props.removeItem(pro)}>-</div>
+                                <div className="qnt--OL clicked" onClick={() => this.props.removeItem(pro)}>-</div>
                             </div>
                             <div className="pro--imgOL">
 
@@ -123,7 +121,7 @@ export class CartItemOL extends Component {
 
                             </div>
                         </div>
-                        <div className="line--itemOL"></div>
+                        <div className="line--itemOL"/>
                     </div>
 
                 </div>

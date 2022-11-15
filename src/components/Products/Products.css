@@ -21,14 +21,14 @@
   margin-bottom: 24px;
 }
 .prod--name {
-  font-family: "Raleway";
+  font-family: "Raleway", serif;
   font-size: 18px;
   line-height: 160%;
   align-self: start;
 }
 .prod--price {
   align-self: start;
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -88,7 +88,7 @@
   top: 151px;
   left: 25%;
   color: #8d8f9a;
-  font-family: "Raleway";
+  font-family: "Raleway", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
